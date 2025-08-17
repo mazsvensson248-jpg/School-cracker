@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: duck-proxy-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "5000"
